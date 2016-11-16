@@ -1,6 +1,9 @@
-﻿
-. C:\Users\YutongGu\Desktop\Powershell\DPSProject\PDFConverter.ps1
-$option=2
+﻿[string] $filepath=$MyInvocation.MyCommand.Path
+$filepath=$filepath.substring(0,$filepath.lastIndexOf("\"))
+
+. $filepath\PDFConverter.ps1
+
+$option=1
 if($links){
     $links.clear()
 }
@@ -52,24 +55,25 @@ foreach ($link in $links){
     $txtname=$txtname -replace ".pdf",".txt"
     $month=$txtname.substring(0,2)
     $year=$txtname.substring(4,2)
-    if(-Not (Test-Path C:\users\YutongGu\Desktop\Powershell\DPSProject\dpstxt\20$year)){
+    if(-Not (Test-Path $filepath\dpsreports\20$year)){
             Write-output "20$year year folder does not exist. Creating folder"
-            mkdir C:\users\YutongGu\Desktop\Powershell\DPSProject\dpstxt\20$year
+            mkdir $filepath\dpsreports\20$year
         }
-    if(-Not (Test-Path C:\users\YutongGu\Desktop\Powershell\DPSProject\dpstxt\20$year\$month)){
+    if(-Not (Test-Path $filepath\dpsreports\20$year\$month)){
         Write-output "$month month folder does not exist. Creating folder"
-        mkdir C:\users\YutongGu\Desktop\Powershell\DPSProject\dpstxt\20$year\$month
+        mkdir $filepath\dpsreports\20$year\$month
     }
-    if (-Not (Test-Path C:\users\YutongGu\Desktop\Powershell\DPSProject\dpstxt\20$year\$month\$txtname)){
+    if (-Not (Test-Path $filepath\dpsreports\20$year\$month\$txtname)){
         
         Write-Output "$txtname does not exist"
         Write-Output "Pulling data from $link"
         try{
             $site=Invoke-WebRequest $link
-            convertpdf -link $link -verbose
+            convertpdf -link $link -path $filepath -verbose
         }
         catch{
-            Write-Output "$link does not exist"
+            Write-Error "An error has occured"
+            Write-Error $_.Exception.Message
         }
         
     }

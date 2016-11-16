@@ -1,14 +1,17 @@
 Function convertpdf{
-    
     [CmdletBinding(DefaultParameterSetName='ByUserName')]
     param(
         [Parameter (
             mandatory=$True,
             valueFromPipeline=$True,
             valueFromPipelineByPropertyName=$True)]
-        [string]$link
+        [string]$link,
+        [Parameter (
+            mandatory=$True,
+            valueFromPipeline=$True,
+            valueFromPipelineByPropertyName=$True)]
+        [string]$path
     )
-   
     $txtname=$link -split "/"
     $txtname=$txtname[$txtname.length-1]
     Write-Verbose "Extracted file name $txtname"
@@ -33,7 +36,7 @@ Function convertpdf{
     while($success -eq 1){
         try{
             Start-sleep -Seconds 5   
-            $WebClient.DownloadFile("$downloadlink","C:\Users\YutongGu\Desktop\Powershell\DPSProject\dpstxt\20$year\$month\$txtname")
+            $WebClient.DownloadFile("$downloadlink","$path\dpsreports\20$year\$month\$txtname")
         }
         catch{
             Write-Verbose "No server response from server."

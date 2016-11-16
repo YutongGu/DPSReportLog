@@ -1,10 +1,13 @@
-﻿$option=3
+﻿[string] $filepath=$MyInvocation.MyCommand.Path
+$filepath=$filepath.substring(0,$filepath.lastIndexOf("\"))
+
+$option=3
 if($option -eq 1){
-    $txtlist= dir -recurse C:\Users\YutongGu\desktop\Powershell\DPSProject\dpstxt\*txt
+    $txtlist= dir -recurse $filepath\dpstxt\*txt
 }
 elseif($option -eq 2){
     $year = Read-host "Year"
-    $txtlist= dir -recurse C:\Users\YutongGu\desktop\Powershell\DPSProject\dpstxt\$year\*txt
+    $txtlist= dir -recurse $filepath\reports\$year\*txt
 }
 elseif($option -eq 3){
     $year = Read-host "Year"
@@ -12,13 +15,13 @@ elseif($option -eq 3){
     if($month.length -eq 1){
         $month="0"+$month
     }
-    $txtlist= dir C:\Users\YutongGu\desktop\Powershell\DPSProject\dpstxt\$year\$month\*txt
+    $txtlist= dir $filepath\dpsreports\$year\$month\*txt
 }
 elseif($option -eq 4){
     $txtinput = Read-host "File"
     $month=$txtinput.substring(0,2)
     $year=$txtinput.substring(4,2)
-    $txtlist= dir C:\Users\YutongGu\desktop\Powershell\DPSProject\dpstxt\20$year\$month\$txtinput
+    $txtlist= dir $filepath\dpsreports\20$year\$month\$txtinput
 }
 $txtlist= $txtlist.name
 $count=0
@@ -32,7 +35,7 @@ foreach ($txt in $txtlist){
     $summary=""
     $month=$txt.substring(0,2)
     $year=$txt.substring(4,2)
-    $reader = [System.IO.File]::OpenText("C:\Users\YutongGu\desktop\Powershell\DPSProject\dpstxt\20$year\$month\$txt")
+    $reader = [System.IO.File]::OpenText("$filepath\dpsreports\20$year\$month\$txt")
     try {
         for() {
             $line = $reader.ReadLine()
