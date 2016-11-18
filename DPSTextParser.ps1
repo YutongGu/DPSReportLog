@@ -9,7 +9,7 @@ $filepath=$filepath.substring(0,$filepath.lastIndexOf("\"))
 #option=3: read all .txt files in a given month
 #option=4: read a specific .txt file
 
-$option=1
+$option=4
 
 #Generates the dictionary of .txt files based on which option you picked
 if($option -eq 1){
@@ -17,7 +17,7 @@ if($option -eq 1){
 }
 elseif($option -eq 2){
     $year = Read-host "Year"
-    $txtlist= dir -recurse $filepath\dps$reports\$year\*txt
+    $txtlist= dir -recurse $filepath\dpsreports\$year\*txt
 }
 elseif($option -eq 3){
     $year = Read-host "Year"

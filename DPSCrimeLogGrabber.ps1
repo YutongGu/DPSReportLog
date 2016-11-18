@@ -67,6 +67,7 @@ if($option -eq 2){
 }
 
 #-----------------PHASE 2: Download from the links------------------#
+$count=0
 foreach ($link in $links){
     #Extracting the file name from the link and converting to a .txt file
     $txtname=$link -split "/"
@@ -88,6 +89,7 @@ foreach ($link in $links){
 
     #Downloading the file if it doesn't already exist
     if (-Not (Test-Path $filepath\dpsreports\20$year\$month\$txtname)){
+        $count+=1
         Write-Output "$txtname does not exist"
         Write-Output "Pulling data from $link"
         try{
@@ -96,7 +98,7 @@ foreach ($link in $links){
             $site=Invoke-WebRequest $link 
 
             #calls convertpdf function with given link and filepath to store data in
-            convertpdf -link $link -path $filepath 
+            convertpdf -link $link -path $filepath
         }
         catch{
             Write-Error "An error has occured"
@@ -104,4 +106,7 @@ foreach ($link in $links){
         }
         
     }
+}
+if($count -e 0){
+    Write-output "Files are already up-to-date"
 }
