@@ -1,0 +1,20 @@
+﻿<Project>
+  <Version>2.0</Version>
+  <FileID>8fbe689d-800d-4b8f-88a6-fb0267c2023f</FileID>
+  <ProjectType>0</ProjectType>
+  <Folders>
+    <Folder>bin</Folder>
+  </Folders>
+  <Files>
+    <File Build="0">Startup.pss</File>
+    <File ReferenceFunction="Invoke-Global_ps1" Build="0" Shared="True">Globals.ps1</File>
+    <File ReferenceFunction="Show-MainForm_psf" Build="0">MainForm.psf</File>
+    <File ReferenceFunction="Invoke-DPSCrimeLogGrabber_ps1" Build="0" Shared="False">bin\DPSCrimeLogGrabber.ps1</File>
+    <File ReferenceFunction="Invoke-DPSReportSearch_ps1" Build="0" Shared="False">bin\DPSReportSearch.ps1</File>
+    <File ReferenceFunction="Invoke-DPSTextParser_ps1" Build="0" Shared="False">bin\DPSTextParser.ps1</File>
+    <File ReferenceFunction="Invoke-PDFConverter_ps1" Build="0" Shared="False">bin\PDFConverter.ps1</File>
+    <File ReferenceFunction="Invoke-ReportIO_ps1" Build="0" Shared="False">bin\ReportIO.ps1</File>
+    <File ReferenceFunction="Invoke-makeHistogram_ps1" Build="0" Shared="False">bin\makeHistogram.ps1</File>
+    <File ReferenceFunction="Invoke-UpdateDataset_ps1" Build="0" Shared="False">bin\UpdateDataset.ps1</File>
+  </Files>
+</Project>

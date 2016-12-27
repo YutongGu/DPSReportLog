@@ -1,0 +1,13 @@
+﻿<ProjectState>
+  <Version>1.0</Version>
+  <FileID>8fbe689d-800d-4b8f-88a6-fb0267c2023f</FileID>
+  <OpenFolders>
+    <Folder>bin</Folder>
+  </OpenFolders>
+  <OpenFiles>
+    <File>bin\DPSCrimeLogGrabber.ps1</File>
+    <File>MainForm.psf</File>
+    <File>Globals.ps1</File>
+    <File>Startup.pss</File>
+  </OpenFiles>
+</ProjectState>
