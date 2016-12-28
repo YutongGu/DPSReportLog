@@ -261,7 +261,8 @@ $labelkey1 = New-Object 'System.Windows.Forms.Label'
 $labelTop5Results = New-Object 'System.Windows.Forms.Label'
 $labelExplanation = New-Object 'System.Windows.Forms.Label'
 $labelFilter = New-Object 'System.Windows.Forms.Label'
-$buttonOK = New-Object 'System.Windows.Forms.Button'
+$buttonQuery = New-Object 'System.Windows.Forms.Button'
+$buttonClose = New-Object 'System.Windows.Forms.Button'
 $labelField = New-Object 'System.Windows.Forms.Label'
 $combobox = New-Object 'System.Windows.Forms.ComboBox'
 $Filter = New-Object 'System.Windows.Forms.TextBox'
@@ -285,14 +286,15 @@ $formGenerateHistogram.Controls.Add($labelkey1)
 $formGenerateHistogram.Controls.Add($labelTop5Results)
 $formGenerateHistogram.Controls.Add($labelExplanation)
 $formGenerateHistogram.Controls.Add($labelFilter)
-$formGenerateHistogram.Controls.Add($buttonOK)
+$formGenerateHistogram.Controls.Add($buttonClose)
 $formGenerateHistogram.Controls.Add($labelField)
 $formGenerateHistogram.Controls.Add($combobox)
 $formGenerateHistogram.Controls.Add($Filter)
-$formGenerateHistogram.AcceptButton = $buttonOK
+$formGenerateHistogram.Controls.Add($buttonQuery)
+$formGenerateHistogram.AcceptButton = $buttonQuery
 $formGenerateHistogram.AutoScaleDimensions = '8, 17'
 $formGenerateHistogram.AutoScaleMode = 'Font'
-$formGenerateHistogram.ClientSize = '416, 387'
+$formGenerateHistogram.ClientSize = '425, 387'
 $formGenerateHistogram.FormBorderStyle = 'FixedDialog'
 $formGenerateHistogram.Margin = '5, 5, 5, 5'
 $formGenerateHistogram.MaximizeBox = $False
@@ -300,6 +302,7 @@ $formGenerateHistogram.MinimizeBox = $False
 $formGenerateHistogram.Name = 'formGenerateHistogram'
 $formGenerateHistogram.StartPosition = 'CenterScreen'
 $formGenerateHistogram.Text = 'Generate Histogram'
+$formGenerateHistogram.ActiveControl = $buttonQuery
 #
 # Divider1
 #
@@ -315,8 +318,8 @@ $Divider1.TextAlign = 'BottomCenter'
 #
 # buttonSave
 #
-$buttonSave.Anchor = 'Bottom, Right'
-$buttonSave.Location = '75, 344'
+$buttonSave.Anchor = 'Bottom, Left'
+$buttonSave.Location = '25, 344'
 $buttonSave.Margin = '4, 4, 4, 4'
 $buttonSave.Name = 'buttonSave'
 $buttonSave.Size = '100, 30'
@@ -329,7 +332,7 @@ $buttonSave.add_click({
 			[System.Windows.Forms.SaveFileDialog]$filedialog = New-Object System.Windows.Forms.SaveFileDialog
 			if ($global:histogramdirectory -eq "")
 			{
-				$filedialog.InitialDirectory = "$ScriptDirectory\data"
+				$filedialog.InitialDirectory = "$ScriptDirectory\data\Histograms"
 			}
 			else
 			{
@@ -508,17 +511,31 @@ $labelFilter.Size = '57, 18'
 $labelFilter.TabIndex = 1
 $labelFilter.Text = 'Filter:'
 #
-# buttonOK
+# buttonClose
 #
-$buttonOK.Anchor = 'Bottom, Right'
-$buttonOK.Location = '239, 344'
-$buttonOK.Margin = '4, 4, 4, 4'
-$buttonOK.Name = 'buttonOK'
-$buttonOK.Size = '100, 30'
-$buttonOK.TabIndex = 0
-$buttonOK.Text = '&OK'
-$buttonOK.UseVisualStyleBackColor = $True
-$buttonOK.add_Click({
+$buttonClose.Anchor = 'Bottom, Right'
+$buttonClose.Location = '305, 344'
+$buttonClose.Margin = '4, 4, 4, 4'
+$buttonClose.Name = 'buttonclose'
+$buttonClose.Size = '100, 30'
+$buttonClose.TabIndex = 0
+$buttonClose.Text = '&Close'
+$buttonClose.UseVisualStyleBackColor = $True
+$buttonClose.add_Click({
+		$formGenerateHistogram.close()
+	})
+#
+# buttonQuery
+#
+$buttonQuery.Anchor = 'Bottom'
+$buttonQuery.Location = '140, 344'
+$buttonQuery.Margin = '4, 4, 4, 4'
+$buttonQuery.Name = 'buttonQuery'
+$buttonQuery.Size = '150, 30'
+$buttonQuery.TabIndex = 0
+$buttonQuery.Text = '&Query'
+$buttonQuery.UseVisualStyleBackColor = $True
+$buttonQuery.add_Click({
 		if ($combobox.SelectedIndex -ne -1)
 		{
 			$global:comboboxval = $combobox.SelectedItem.ToString()
