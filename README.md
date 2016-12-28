@@ -22,7 +22,7 @@ reading .dps files.
 ---------------------------Using the GUI-------------------------------
 
 Viewing reports:
-- To view reports, select the entire row by clicking on th leftmost cell and press 'v'
+- To view reports, select the entire row by clicking on the leftmost cell and press 'v'
 - To view individual cells select the desired cell and press 'v'
 
 Update button:
