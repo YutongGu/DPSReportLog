@@ -29,9 +29,9 @@ function Main {
 		$scriptDirectory = $PSScriptRoot
 	}#>
 	
-	$index = $ScriptDirectory.LastIndexOf("ReportSC")
+	$index = $ScriptDirectory.LastIndexOf("x64")
 	
-	$ScriptDirectory=$ScriptDirectory.Substring(0,$index)+"ReportSC"
+	$ScriptDirectory=$ScriptDirectory.Substring(0,$index)
 	. $scriptDirectory\bin\PDFConverter.ps1
 	. $scriptDirectory\bin\DPSReportSearch.ps1
 	. $ScriptDirectory\bin\DPSTextParser.ps1
