@@ -21,9 +21,9 @@ function Main {
 		
 	#--------------------------------------------------------------------------
 	#TODO: Add initialization script here (Load modules and check requirements)
-	#[string]$ScriptDirectory = $PSScriptRoot
-	$scriptDirectory = $PSScriptRoot
-	<#[string]$ScriptDirectory = [System.AppDomain]::CurrentDomain.BaseDirectory.TrimEnd('\')
+	[string]$ScriptDirectory = $PSScriptRoot
+	<#$scriptDirectory = $PSScriptRoot
+	[string]$ScriptDirectory = [System.AppDomain]::CurrentDomain.BaseDirectory.TrimEnd('\')
 	if ($ScriptDirectory -eq $PSHOME.TrimEnd('\'))
 	{
 		$scriptDirectory = $PSScriptRoot
