@@ -22,11 +22,8 @@ reading .dps files.
 ---------------------------Using the GUI-------------------------------
 
 Update button:
-- The update button will pull the most recent reports from the dps website and update them
-- to "MainDataset.dps." 
--
-- ***It is important to check the spelling of new reports because the 
-- conversion from the oridinal .pdf to .txt is not perfect***
+- The update button will pull the most recent reports from the dps website and update them to "MainDataset.dps." 
+- ***It is important to check the spelling of new reports because the conversion from the oridinal .pdf to .txt is not perfect***
 
 Load button:
 - The load button will load a dataset file (.dps) and display the reports
@@ -38,15 +35,11 @@ Export button:
 - The export button will export the current search into a new dataset file
 
 Generate Histogram button:
-- The generate histogram button will generate a histogram based on a user chosen field with
-- an optional filter being added using powershell regular expressions to only capture words 
-- that match. 
-- Only the top 5 results will be displayed but for the full histogram the user must save the
-- histogram
+- The generate histogram button will generate a histogram based on a user chosen field with an optional filter being added using powershell regular expressions to only capture words that match. 
+- Only the top 5 results will be displayed but for the full histogram the user must save the histogram
 
 Add button:
-- The add button will allow user to manually enter in a report in the case that the update 
-- function missed a report.
+- The add button will allow user to manually enter in a report in the case that the update function missed a report.
 
 Search function:
 - To search within a specified field use the format: "Field: Value"
