@@ -1,4 +1,4 @@
-# USCDPSReportLog
+# ReportSC
 The goal of this project is to increase transparency within the 
 University of Southern California's Department of Public Safety by providing a means
 for visualizing its reports and allow for independent bodies to perform statistical
