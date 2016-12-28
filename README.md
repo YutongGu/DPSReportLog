@@ -21,6 +21,10 @@ reading .dps files.
 
 ---------------------------Using the GUI-------------------------------
 
+Viewing reports:
+- To view reports, select the entire row by clicking on th leftmost cell and press 'v'
+- To view individual cells select the desired cell and press 'v'
+
 Update button:
 - The update button will pull the most recent reports from the dps website and update them to "MainDataset.dps." 
 - ***It is important to check the spelling of new reports because the conversion from the oridinal .pdf to .txt is not perfect***
