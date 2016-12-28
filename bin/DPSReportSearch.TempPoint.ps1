@@ -23,44 +23,24 @@ Function searchReport{
     $exclude=$false
     #create a new searchedList to contain the matching reports
     [System.Collections.ArrayList] $searchedList= New-Object System.Collections.ArrayList
-	$matched = $false
-	if ($value -match "^-")
-	{
-		$value = $value.substring(1)
-		$exclude = $true
-	}
-	if(-not $field -or $field -eq ""){
-		foreach ($case in $array)
-		{
-			$matched = $false
+    if(-not $field -or $field -eq ""){
+        foreach ($case in $array){
             foreach ($item in $case.values){
-				
-				if ($item -match "$value")
-				{
-					$matched = $true
-					if (-not $exclude)
-					{
-						[void]$searchedList.add($case.clone())
-					}
-					break
-				}
-				
-			}
-			if ($matched -eq $false)
-			{
-				if ($exclude)
-				{
-					[void]$searchedList.add($case.clone())
-				}
-			}
-		}
-	}
-	#checks if a valid field is entered
+                if($item -match "$value"){
+                    [void]$searchedList.add($case.clone())
+                    break
+                }
+            }
+        }
+    }
+    #checks if a valid field is entered
     elseif($array[0].keys -contains $field){
-        
+        if($value -match "^-"){
+            $value= $value.substring(1)
+            $exclude = $true
+        }
         #iterates through the array and adds matches into searchedList
-		foreach ($case in $array)
-		{
+        foreach ($case in $array){
             if($exclude){
                 if($case.$field -notmatch "$value"){
                     [void]$searchedList.add($case.clone())
