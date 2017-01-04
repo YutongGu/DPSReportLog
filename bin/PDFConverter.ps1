@@ -15,7 +15,8 @@ Function convertpdf{
             mandatory=$True,
             valueFromPipeline=$True,
             valueFromPipelineByPropertyName=$True)]
-        [string]$path
+        [string]$path,
+        [switch]$quiet
     )
     $output=new-object System.Collections.ArrayList
     #extracting file name from link and changing its extention to .txt
@@ -58,10 +59,11 @@ Function convertpdf{
             continue
         }
        
-        Write-output "Successfully created $txtname"
+        Write-Verbose "Successfully created $txtname"
         $success=0
     }
-    return "$path\dpsreports\20$year\$month\$txtname"
-   
+    if(-not $quiet){
+        return "$path\dpsreports\20$year\$month\$txtname"
+    }
     
 }

@@ -10,5 +10,6 @@
     <File>Globals.ps1</File>
     <File>Startup.pss</File>
     <File>bin\DPSReportSearch.ps1</File>
+    <File>bin\PDFConverter.ps1</File>
   </OpenFiles>
 </ProjectState>

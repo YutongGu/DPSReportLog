@@ -22,19 +22,22 @@ function Main {
 	#--------------------------------------------------------------------------
 	#TODO: Add initialization script here (Load modules and check requirements)
 	[string]$ScriptDirectory = $PSScriptRoot
-	<#$scriptDirectory = $PSScriptRoot
-	[string]$ScriptDirectory = [System.AppDomain]::CurrentDomain.BaseDirectory.TrimEnd('\')
+	
+	<#[string]$ScriptDirectory = [System.AppDomain]::CurrentDomain.BaseDirectory.TrimEnd('\')
 	if ($ScriptDirectory -eq $PSHOME.TrimEnd('\'))
 	{
 		$scriptDirectory = $PSScriptRoot
 	}#>
 	
-	$index = $ScriptDirectory.LastIndexOf("x64")
+	$index = $ScriptDirectory.LastIndexOf("bin")
+	if ($index -ne -1)
+	{
+		$ScriptDirectory = $ScriptDirectory.Substring(0, $index)
+	}
 	
-	$ScriptDirectory=$ScriptDirectory.Substring(0,$index)
 	. $scriptDirectory\bin\PDFConverter.ps1
 	. $scriptDirectory\bin\DPSReportSearch.ps1
-	. $ScriptDirectory\bin\DPSTextParser.ps1
+	. $ScriptDirectory\bin\DPSTextParser2.ps1
 	. $ScriptDirectory\bin\ReportIO.ps1
 	. $ScriptDirectory\bin\makeHistogram.ps1
 	. $ScriptDirectory\bin\UpdateDataset.ps1

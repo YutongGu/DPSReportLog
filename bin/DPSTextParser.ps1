@@ -261,8 +261,8 @@ function parseReports{
              #write-output "Added "$report["Report #"]
         }
     }
-    
-    $array= sortReports -inputArray $array
+    cleanup([ref] $array)
+    sortReports([ref]$array)
     $retval=0
     if($generateDataset){
         if($filepath -like "*bin*"){
@@ -292,16 +292,8 @@ function parseReports{
     }
 }
 
-function sortReports{
-    [CmdletBinding(DefaultParameterSetName='ByUserName')]
-    param(
-         [Parameter (
-            mandatory=$True,
-            valueFromPipeline=$True,
-            valueFromPipelineByPropertyName=$True)]
-         [System.Collections.ArrayList] $inputArray
-    )
-    
+function sortReports ([ref]$arrayref){
+    $inputArray= $arrayref.Value
     if($inputArray.count -gt 1){
         $swapped=0;
         [System.Collections.Hashtable] $tempReport=@{}
@@ -323,7 +315,41 @@ function sortReports{
             }
         }
     }
-  
-    return ,$inputArray #i changed this
     
+}
+
+function cleanup([ref]$reportList){
+    $array = $reportList.Value
+    foreach($case in $array){
+        if($case."Location" -match " :$"){
+            $case."Location" = $case."Location" -replace " :$",""
+        }
+        if($case."Location" -match "VW"){
+            $case."Location" = $case."Location" -replace "VW","WY"
+        }
+        if($case."Location" -match "PIain"){
+             $case."Location" = $case."Location" -replace "PIAIN","PLAIN"
+        }
+        if($case."Location" -match "\|"){
+             $case."Location" = $case."Location" -replace "\|","I"
+        }
+        if($case."Incident" -match "V\\ﬁ"){
+             $case."Location" = $case."Location" -replace "V\\ﬁ","WI"
+        }
+        if($case."Incident" -match "ﬁ"){
+             $case."Location" = $case."Location" -replace "ﬁ","fi"
+        }
+        if($case."Incident" -match "ofa"){
+             $case."Location" = $case."Location" -replace "ofa","of a"
+        }
+        if($case."Incident" -match "—"){
+             $case."Location" = $case."Location" -replace "—","-"
+        }
+        
+        if($case."Summary" -match ":"){
+            write-output $case.summary
+            $case."Summary"= $case."Summary".substring($case."Summary".lastindexOf(":")+1).trim()
+        }
+    }
+
 }

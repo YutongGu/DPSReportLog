@@ -584,7 +584,7 @@ AAAAAAAAAAAAAAAAAAAAgAAAAAAAQAD//4AAAAPAAA==</Binary>
       <Binary>AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAu
 MC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAA
 ACZTeXN0ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkD
-AAAADwMAAAB2CgAAAk1TRnQBSQFMAgEBCAEAAWABAQFgAQEBEAEAARABAAT/ASEBAAj/AUIBTQE2
+AAAADwMAAAB2CgAAAk1TRnQBSQFMAgEBCAEAAXABAQFwAQEBEAEAARABAAT/ASEBAAj/AUIBTQE2
 BwABNgMAASgDAAFAAwABMAMAAQEBAAEgBgABMP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/
 AP8AugADwgH/AzUB/wM1Af8DwgH/MAADwgH/A1UB/wOCAf8DwgH/sAADNQH/AwAB/wMAAf8DNQH/
 MAADggH/AzUB/wM1Af8DVQH/gAADwgH/AzUB/wM1Af8DwgH/IAADNQH/AwAB/wMAAf8DNQH/A8IB
@@ -1445,16 +1445,19 @@ $buttonSave_Click={
 	$buttonExit.Enabled = $false
 	$buttonSave.Text = "Saving..."
 	#Create a New Job using the Job Tracker
-	Add-JobTracker -Name 'Save' -ArgumentList $global:reportList, $global:datasetFile, $ScriptDirectory\bin\ReportIO.ps1 `
+	Add-JobTracker -Name 'Save' -ArgumentList $global:reportList, $global:datasetFile, $ScriptDirectory `
 	-JobScript {
 		#--------------------------------------------------
 		#TODO: Set a script block
 		#Important: Do not access form controls from this script block.
 		try
 		{
-			. $args[2]
+			$path1 = $args[2] + "\bin\ReportIO.ps1"
+			$path2 = $args[2] + "\data\MainDataset.dps"
+			$path3 = $args[2] + "\backup\MainDataset.dps"
+			. $path1
 			write-reports -array $args[0] -path $args[1]
-			
+			Copy-Item $path5 $path6 -Force
 		}
 		catch
 		{
@@ -1497,14 +1500,17 @@ $buttonUpdate_Click={
 		$response = [System.Windows.forms.MessageBox]::Show('Would you like to save changes made toMainDataset?', 'Update Reports', 'YesNo')
 		if ($response.ToString() -eq "Yes")
 		{
-			write-reports -array $global:reportList -path $global:ScriptDirectory
+			write-reports -array $global:reportList -path $ScriptDirectory
 		}
 	}
 	$buttonUpdate.Enabled = $false
 	$buttonExit.Enabled = $false
 	$buttonUpdate.Text= "Updating..."
-	[System.Windows.forms.MessageBox]::Show('Checking for updates...', 'Update Reports')
+	
 	#Create a New Job using the Job Tracker
+	[System.Windows.forms.MessageBox]::Show('Checking for updates...', 'Update Reports')
+	
+		
 	Add-JobTracker -Name 'Update' -ArgumentList $ScriptDirectory `
 	-JobScript {
 		#--------------------------------------------------
@@ -1516,15 +1522,18 @@ $buttonUpdate_Click={
 			$path1 = $args[0] + "\bin\DPSCrimeLogGrabber.ps1"
 			$path2 = $args[0] + "\bin\UpdateDataset.ps1"
 			$path3 = $args[0] + "\bin\ReportIO.ps1"
-			$path4 = $args[0] + "\bin\DPSTextParser.ps1"
+			$path4 = $args[0] + "\bin\DPSTextParser2.ps1"
 			. $path1
 			. $path2
 			. $path3
 			. $path4
+		
 			$isConnected = [Activator]::CreateInstance([Type]::GetTypeFromCLSID([Guid]'{DCB00C01-570F-4A9B-8D69-199FDBA5723B}')).IsConnectedToInternet
 			if ($isConnected)
 			{
+				
 				$response[0] = update-logs -projectpath $args[0] -option 1
+				
 			}
 			else
 			{
@@ -1541,7 +1550,7 @@ $buttonUpdate_Click={
 		}
 		catch
 		{
-			Write-Output $_.Exception.Message | Out-File C:\Users\YutongGu\Desktop\Powershell\DPSReportLog\data\error.txt
+			Write-Output $_.Exception.Message | Out-File $args[0]\data\error.txt
 			
 		}
 	}`
@@ -1566,7 +1575,7 @@ $buttonUpdate_Click={
 			}
 			
 		}
-		elseif ($results[0] -eq 0)
+		elseif ($results[0] -eq 1)
 		{
 			if ($results[1] -eq 0)
 			{

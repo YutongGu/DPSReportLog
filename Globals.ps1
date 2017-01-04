@@ -1,6 +1,7 @@
 ﻿#--------------------------------------------
 # Declare Global Variables and Functions here
 #--------------------------------------------
+
 [System.Collections.IList]$global:errorList = new-object System.Collections.ArrayList
 [System.Collections.IList]$global:reportList = new-object System.Collections.ArrayList
 $global:searchList
@@ -358,6 +359,11 @@ $buttonSave.add_click({
 			if ($global:histogramdirectory -ne $fileDir)
 			{
 				$global:histogramdirectory = $fileDir
+			}
+			$response = [System.Windows.Forms.MessageBox]::Show("Would you like to open the newly created histogram?", "Open histogram", 'YesNo')
+			if ($response.ToString() -eq "Yes")
+			{
+				start $filedialog.FileName
 			}
 		}
 		else

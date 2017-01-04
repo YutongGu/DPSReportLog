@@ -24,7 +24,7 @@
         if($files -notcontains $txt){
             write-verbose "Adding $txt"
             $addedval= $true
-            $val = parseReports -option 4 -projectpath $projectpath -file $txt -generateDataset -dataset $datasetname -append -suppress
+            $val = parseReports2 -option 4 -projectpath $projectpath -file $txt -generateDataset -dataset $datasetname -append -suppress
             return $val
         }
     }

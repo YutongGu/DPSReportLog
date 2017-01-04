@@ -23,7 +23,7 @@ function update-logs{
     . $projectpath\bin\PDFConverter.ps1
 
     if($updateDataset){
-        . $projectpath\bin\DPSTextParser.ps1
+        . $projectpath\bin\DPSTextParser2.ps1
         $reportArray= new-object System.Collections.ArrayList
     }
 
@@ -44,8 +44,8 @@ function update-logs{
     
         [int[]] $daysinthemonth = 31,28,31,30,31,30,31,31,30,31,30,31
         #hard coded date range in format month, day, year
-        [int[]] $startdate= 11,1,15
-        [int[]] $enddate= 2,1,16
+        [int[]] $startdate= 1,1,15
+        [int[]] $enddate= 1,1,16
     
         #get the day of the week it is and initialize the daycount to that day
         $daycounthelper= Get-Date -Month $startdate[0] -Day $startdate[1] -Year (2000+$startdate[2])
@@ -111,7 +111,7 @@ function update-logs{
 
         #Downloading the file if it doesn't already exist
         if (-Not (Test-Path $projectpath\dpsreports\20$year\$month\$txtname)){
-            $count+=1
+            
             Write-verbose "$txtname does not exist"
             Write-verbose "Pulling data from $link" 
             try{
@@ -120,19 +120,18 @@ function update-logs{
                 $site=Invoke-WebRequest $link 
 
                 #calls convertpdf function with given link and filepath to store data in
-                convertpdf -link $link -path $projectpath
+                convertpdf -link $link -path $projectpath -quiet
                 if($updateDataSet){
                     write-verbose "Appending to Dataset"
-                    $retval = parsereports -option 4 -filepath $projectpath -file $txtname -generateDataset -dataset $datasetname -append -suppress
+                    $retval = parsereports2 -option 4 -filepath $projectpath -file $txtname -generateDataset -dataset $datasetname -append -suppress
                     write-verbose "Appended to Dataset"
                 }
-				
+				$count+=1
 			}
 			catch
 			{
 				Write-Error "An error has occured"
 				Write-Error $_.Exception.Message
-				return -1
 			}
 			
 		}

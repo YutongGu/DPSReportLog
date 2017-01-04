@@ -77,66 +77,65 @@
     }#>
 }
 function read-Reports{
-    [CmdletBinding(DefaultParameterSetName='ByUserName')]
-    param(
-        [ValidateNotNull()]
-        [System.Collections.ArrayList]$array,
-        [Parameter (
-            mandatory=$True,
-            valueFromPipeline=$True,
-            valueFromPipelineByPropertyName=$True)]
-        [string]$path
-    )
-    $output = 1
-    if (-not ($array)){
-        $output=1
-    }
-    $reader = [System.IO.File]::OpenText("$path")
-    [string] $key=""
-    [string] $value=""
-    $report=@{"Index"=""; "Report #"="";"Incident"="";"Location"="";"Occurred"="";"Reported"="";"Disposition"="";"Summary"="";"File"=""}
-    $checklist=@{"Index"=0; "Report #"=0;"Incident"=0;"Location"=0;"Occurred"=0;"Reported"=0;"Disposition"=0;"Summary"=0;"File"=0}
-    $complete=0
-    $output=$false
-    if ($array -eq $null){
-        $output=
-        $array=new-object System.Collections.Arraylist
-    }
-    else{
-        $array.clear()
-    }
-    try {
-        for() {
-            
-            $line = $reader.ReadLine()
-            if ($line -eq $null) { break }
-            if($line -ne "" -and $line -like "*|*"){
-                $line=$line.split('|')
-                $key=$line[0]
-                $value=$line[1]
-            }
-            else{
-                continue
-            }
-            #$key
-            $report.$key=$value.trim()
-            $checklist.$key=1
-            foreach ($item in $checklist.values){
-                if ($item -eq 0){
-                    $complete=0
-                    break
-                }
-                $complete=1
-            }
-            if($complete -eq 1){
-                [void]$array.add($report.clone())
-                $checklist=@{"Index"=0; "Report #"=0;"Incident"=0;"Location"=0;"Occurred"=0;"Reported"=0;"Disposition"=0;"Summary"=0;"File"=0}
-            }
-        }
-        
-    }
-    finally {
-        $reader.Close()
+	[CmdletBinding(DefaultParameterSetName='ByUserName')]
+	param(
+	    [ValidateNotNull()]
+	    [System.Collections.ArrayList]$array,
+	    [Parameter (
+	        mandatory=$True,
+	        valueFromPipeline=$True,
+	        valueFromPipelineByPropertyName=$True)]
+	    [string]$path
+	)
+	$reader = [System.IO.File]::OpenText("$path")
+	[string] $key=""
+	[string] $value=""
+	$report=@{"Index"=""; "Report #"="";"Incident"="";"Location"="";"Occurred"="";"Reported"="";"Disposition"="";"Summary"="";"File"=""}
+	$checklist=@{"Index"=0; "Report #"=0;"Incident"=0;"Location"=0;"Occurred"=0;"Reported"=0;"Disposition"=0;"Summary"=0;"File"=0}
+	$complete=0
+	$output=$false
+	if ($array -eq $null){
+	    $output= $true
+	    $array=new-object System.Collections.Arraylist
+	}
+	else{
+	    $array.clear()
+	}
+	try {
+	    for() {
+	            
+	        $line = $reader.ReadLine()
+	        if ($line -eq $null) { break }
+	        if($line -ne "" -and $line -like "*|*"){
+	            $line=$line.split('|')
+	            $key=$line[0]
+	            $value=$line[1]
+	        }
+	        else{
+	            continue
+	        }
+	        #$key
+	        $report.$key=$value.trim()
+	        $checklist.$key=1
+	        foreach ($item in $checklist.values){
+	            if ($item -eq 0){
+	                $complete=0
+	                break
+	            }
+	            $complete=1
+	        }
+	        if($complete -eq 1){
+	            [void]$array.add($report.clone())
+	            $checklist=@{"Index"=0; "Report #"=0;"Incident"=0;"Location"=0;"Occurred"=0;"Reported"=0;"Disposition"=0;"Summary"=0;"File"=0}
+	        }
+	    }
+	        
+	}
+	finally {
+	    $reader.Close()
+	}
+    if($output -eq $true){
+        return $array
     }
 }
 <#under construction#>
