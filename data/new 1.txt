@@ -1,0 +1,460 @@
+GOODWILL                                            1    
+CARDINAL GARDENS ALLEY                              1    
+SOTO ST & MEDFORD ST                                1    
+SOTO ST & MARENGO ST                                1    
+SOTO ST & LANCASTER AV                              1    
+CHANO'S                                             1    
+CHARLOTTE ST                                        1    
+CHARLOTTE ST & CORNWELL ST                          1    
+CHICAGO AV                                          1    
+CHILDS WY & FIGUEROA ST                             1    
+SOTO ST & CHARLOTTE ST                              1    
+CITY PARK I APTS.                                   1    
+CITY PARKII APTS.                                   1    
+COLLEGE VIEW APTS.                                  1    
+CONSOLIDATED PARKING LOT                            1    
+SIGMA ALPHA EPSILON                                 1    
+CURRIE HALL                                         1    
+SHRINEAUDITORIUM                                    1    
+SHRINE PLACE APARTMENTS                             1    
+DOCKWEILER POST OFFICE                              1    
+DOWNEY WY & TROUSDALE PKY                           1    
+EARLY CHILDHOOD TRAINING CENTER                     1    
+CAMPUS DEVELOPMENT& FACILITIES BUILDING             1    
+EASTLAKE AV                                         1    
+SOTO ST & VALLEY BL                                 1    
+BLK St                                              1    
+37TH DR & CATALINA ST                               1    
+MCDONALDS OLYMPIC SWIM STADIUM                      1    
+37TH PL & FLOWER ST                                 1    
+37TH PL & NORMANDIE AV                              1    
+37TH PL & RAYMOND AV                                1    
+37TH PL &VERMONT AV                                 1    
+THE BUNGALOWS                                       1    
+38TH ST & FLOWER ST                                 1    
+39TH ST & FIGUEROA ST                               1    
+MCCULLOCKTOWNHOMES                                  1    
+STATE ST & ZONAL AV                                 1    
+ST. VINCENT DePAUL CHURCH                           1    
+NORWOOD ELEMENTARY SCHOOL                           1    
+ST. AGNES CHURCH                                    1    
+ALPHA EPSILON Pl                                    1    
+ALTAMED HEALTH CENTER                               1    
+ARCO                                                1    
+ST ST & FIGUEROA ST                                 1    
+BETA THETA PI                                       1    
+BIGGY LOT                                           1    
+BIGGY ST & EASTLAKE AV                              1    
+BONSALLO AV                                         1    
+EC2 BUILDING                                        1    
+SENATOR APARTMENTS II                               1    
+SENATOR APARTMENTS I                                1    
+Pl KAPPA PHI                                        1    
+Pl KAPPA ALPHA                                      1    
+HSC PUBLIC SAFETY OFFICE                            1    
+PISA                                                1    
+JAMES & JILL FERTITTA HALL                          1    
+PARKING LOT SSRI                                    1    
+JEFFERSON BL & MCCLINTOCKAV                         1    
+PALISADES II                                        1    
+JEFFERSON BL& UNIVERSITY AV                         1    
+MANOR APARTMENTS                                    1    
+MANAS                                               1    
+KAPPA ALPHA                                         1    
+OFF CAMPUS CHECK AREA A                             1    
+KECK MEDICINE PASADENA                              1    
+KENNETH NORRIS JR. CANCER HOSPITAL RESEARCH         1    
+KERCKHOFF CARRIAGE HOUSE                            1    
+LA BICYCLES                                         1    
+LA84 FOUNDATION/JOHN C. ARGUE SWIM STADIUM          1    
+LAFD STATION                                        1    
+LDS INSTITUTE OF RELIGION                           1    
+O'NEIL WAREHOUSE                                    1    
+HEALTHCARE CENTER2                                  1    
+POPEYES                                             1    
+HEALTH SCIENCE CAMPUS CHILD CARE CENTER             1    
+HEALTH SCIENCE ALHAMBRA BUILDING                    1    
+SECOND CHAPEL OF CHRIST                             1    
+ENTRANCE GATE5                                      1    
+ENTRANCE GATE8                                      1    
+MCCLINTOCK & DOWNEY                                 1    
+EXPOSITION BL & PARDEE WY                           1    
+EXPOSITION BL & WATT WY                             1    
+EXPOSITION BL &WATTWY                               1    
+MARTI GRAS APTS.                                    1    
+FAIRMONT APARTMENTS ALLEY                           1    
+FIGUEROA BUILDING                                   1    
+36TH ST &VERMONT AV                                 1    
+ROYAL STREET HOUSE                                  1    
+FORTHMANN HOUSE                                     1    
+ROW APTS                                            1    
+REGAL RITA                                          1    
+GOOD SAMARITAN HOSPITAL                             1    
+GRADUATE FRAT HOUSE                                 1    
+GREEK ESCAPE                                        1    
+GRINDER                                             1    
+HARLYNE .J. NORRIS RESEARCH TOWER                   1    
+HAZEL & STANLEY HALL FINANCIAL SERVICES BUILDING    1    
+HEALTH RESEARCH ASSOCIATION                         1    
+FLOWER DR                                           1    
+NORFOLK ST & PLAYGROUND ST                          1    
+BELAIRE APARTMENTS ALLEY                            1    
+30TH ST & FLOWER ST                                 1    
+USC SCHOOL OF CINEMATIC ARTS STATION                1    
+USC BUILDING ONE                                    1    
+35TH PL & BUDLONG AV                                1    
+UNIVERSITY VILLAGE NINE                             1    
+UNIVERSITY VILLAGE EIGHT                            1    
+UNIVERSITY VILLAGE                                  1    
+3012VERMONT AV                                      1    
+UNION AV                                            1    
+30TH PL & VERMONT AV                                1    
+UNION ST                                            1    
+30TH PL &VERMONT AV                                 1    
+30TH ST & GRAND AV                                  1    
+33RD ST & GRAND AV                                  1    
+33RD ST & FLOWER ST                                 1    
+33RD ST & FIGUEROA ST                               1    
+UNIVERSITY PRESIDENT'S HOME                         1    
+UNIVERSITY MALLWAY NORTH                            1    
+UNION STATION                                       1    
+UNIVERSITY GATEWAYAPARTMENTS                        1    
+32ND ST & ROYAL ST                                  1    
+31ST ST & ORCHARD AV                                1    
+30THST                                              1    
+313T ST & VERMONT AV                                1    
+31ST ST & FIGUEROA ST                               1    
+31ST ST & FLOWER ST                                 1    
+31ST ST & HOPE ST                                   1    
+METRO STATION EXPO PARK                             1    
+35TH PL & NORMANDIE AV                              1    
+24TH ST & HOOVER ST                                 1    
+36TH PL &VERMONT AV                                 1    
+22ND ST                                             1    
+23RD ST & BONSALLO AV                               1    
+36TH PL & NORMANDIE AV                              1    
+MISSION RD & GRIFFITH AV                            1    
+23RD ST & OAK ST                                    1    
+23RD ST & SCARFF ST                                 1    
+23RD ST & TOBERMAN ST                               1    
+35TH ST & VERMONT AV                                1    
+23RD ST & UNION ST                                  1    
+WASH & DRY LAVANDERIA                               1    
+METRO STATION EXPONERMONT                           1    
+24TH ST & MAGNOLIA AV                               1    
+31ST ST & GRAND ST                                  1    
+VERMONT AVENUE ELEMENTARY SCHOOL                    1    
+27TH ST & ORCHARD ST                                1    
+25TH ST & MAGNOLIA AV                               1    
+MICHELSON CENTER FOR CONVERGENT BIOSCIENCE          1    
+MUSEUM- NATURAL HISTORY                             1    
+27TH ST & ADAMS GARDEN ST                           1    
+27TH ST & BUDLONG AV                                1    
+NORFOLK ST                                          1    
+THRIFTY JR.                                         1    
+27TH ST & MONMOUTH AV                               1    
+27TH ST & FLOWER ST                                 1    
+MARDI GRAS APTS.                                    10   
+CLUB                                                10   
+COLISEUM                                            10   
+CVS PHARMACY                                        10   
+WALTON AV                                           10   
+SAN PABLO PARKING STRUCTURE                         10   
+ZETA BETA TAU                                       10   
+THE ROW HOUSE                                       10   
+ADAMS BL & FIGUEROA ST                              10   
+ADAMS BL & HOOVER ST                                10   
+THE MANSION                                         10   
+37TH DR                                             11   
+29TH ST & ORCHARD AV                                11   
+34TH ST & TROUSDALE PKY                             11   
+30TH ST & VERMONT AV                                11   
+LOCATION NOT GIVEN                                  11   
+37TH ST                                             11   
+UNIVERSITY RESIDENCE HALL                           11   
+HEALTH SCIENCES CAMPUS PARKING STRUCTURE            11   
+THE ROW AREA                                        12   
+ADAMS BL & ELLENDALE PL                             12   
+PHI KAPPA PSI                                       12   
+JEFFERSON BL & HOPE ST                              12   
+30TH ST & ORCHARD ST                                12   
+THE LAB                                             13   
+EXPOSITION BL & TROUSDALE PKY                       13   
+TAU KAPPA EPSILON                                   13   
+STARBUCKS                                           13   
+30TH ST & HOOVER ST                                 13   
+DOWNEY WY & MCCLINTOCK AV                           14   
+JEFFERSON BL & HOOVER ST                            14   
+FRANK L. KING OLYMPIC HALL OF CHAMPIONS             14   
+28TH ST & FIGUEROA ST                               14   
+WEST 27TH PLACE APARTMENTS                          14   
+32ND ST & FIGUEROA ST                               14   
+ICON PLAZA                                          15   
+NOT GIVEN                                           15   
+36TH PL & VERMONT AV                                15   
+30TH ST & UNIVERSITY AV                             15   
+MCDONALDS                                           15   
+JEFFERSON BL & MCCLINTOCK AV                        16   
+28TH ST & UNIVERSITY AV                             16   
+TUSCANY APARTMENTS                                  16   
+OUTSIDE USC AREA                                    161  
+JEFFERSON BL & VERMONT AV                           17   
+MCCARTHY QUAD                                       17   
+HEALTHCARE CENTER*                                  176  
+COLLEGE RESIDENCE HALL                              18   
+30TH ST & FIGUEROA ST                               18   
+JEFFERSON BL & FIGUEROA ST                          18   
+RAY & NADINE WATT HALL OF ARCHITECTURE              19   
+CENTENNIAL APARTMENTS                               19   
+HOOVER RECREATION CENTER                            2    
+HEBREW UNION COLLEGE                                2    
+VAN BUREN PL                                        2    
+VERDUGO HILLS HOSPITAL                              2    
+TOBERMAN ST                                         2    
+37TH ST & RAYMOND AV                                2    
+37TH ST & VERMONT AV                                2    
+HOWARD JONES FOOTBALL PRACTICE FIELD                2    
+PARKING LOT B                                       2    
+25TH ST & HOOVER ST                                 2    
+LAMBDA CH                                           2    
+23RD ST & FIGUEROA ST                               2    
+23RD ST & HOOVER ST                                 2    
+23RD ST & PARK GROVE AV                             2    
+THE SPOT                                            2    
+MEN LO AV                                           2    
+JOHN TRACY CLINIC                                   2    
+37TH ST & HOPE ST                                   2    
+THE COFFEE BEAN AND TEA LEAF                        2    
+JEFFERSON BL & VAN BUREN PL                         2    
+THE TOWER APARTMENTS                                2    
+24TH ST & VERMONT AV                                2    
+JEFFERSON BL & CATALINA ST                          2    
+JEFFERSON BL & BUDLONG AV                           2    
+37TH ST & FLOWER ST                                 2    
+37TH ST & GRAND AV                                  2    
+PALISADES                                           2    
+CENTER OF CAMPUS (HSC)                              2    
+ADAMS BL & SCARFF ST                                2    
+MARGARITA BAR                                       2    
+DOWN EY WY & WATT WY                                2    
+BETA OMEGA PHI                                      2    
+DMV OLD                                             2    
+DMV NEW                                             2    
+DELTA TAU DELTA                                     2    
+DELTA SIGMA DELTA                                   2    
+DEDEAUX FIELD                                       2    
+32ND STREET SCHOOL                                  2    
+BLOOM WK & TROUSDALE PKY                            2    
+30TH ST & NORMANDIE AV                              2    
+COUNTY GENERAL HOSPITAL                             2    
+SPORTS ARENA                                        2    
+30TH ST & SHRINE PL                                 2    
+COCKINS HOUSE                                       2    
+32ND ST                                             2    
+SONI MCALISTER FIELD                                2    
+CINEMA TELEVISION CENTER COMPLEX                    2    
+CHILDS WY & TROUSDALE PK                            2    
+30TH ST &VERMONT AV                                 2    
+CHILDS WY & MCCLINTOCK AV                           2    
+MOUNT SAINT MARY'S                                  2    
+RADISSON HOTEL RESTAURANT                           2    
+SEVEN ELEVEN                                        2    
+MCKIBBEN HALL                                       2    
+EASTLAKE LOT                                        2    
+27TH ST & RAYMOND AV                                2    
+ADAMS BL & MAGNOLIA ST                              2    
+TACO BELL                                           2    
+28TH ST & FLOWER ST                                 2    
+CENTRAL RECEIVING NEW                               2    
+USC EYE INSTITUTE                                   2    
+FLOWER ST                                           2    
+28TH ST & VERMONT AV                                2    
+FELIX CHEVROLET                                     2    
+DUNES APTS.                                         2    
+UNIVERSITY VILLAGE SEVEN                            2    
+SAN PABLO ST & EASTLAKE AV                          2    
+UNIVERSITY VILLAGE ONE                              2    
+29TH ST & FIGUEROA ST                               2    
+MENLO TOWNHOUSE                                     2    
+29TH ST & KENWOOD AV                                2    
+MCCARTHY WY & FIGUEROA ST                           2    
+ALPHA DELTA CHI                                     2    
+SCHOOL OF CINEMATIC ARTS-BLDG. D                    2    
+29TH ST & WALTON AV                                 2    
+AVALON APARTMENTS                                   2    
+35TH PL                                             2    
+OFF CAMPUS CHECK AREA D                             2    
+LAMBDA CHI ALPHA                                    22   
+23RD ST                                             23   
+CENTER OF CAMPUS                                    24   
+27TH ST                                             24   
+RALPHS SUPERMARKET                                  24   
+ADAMS BL                                            25   
+SCHOOL OF CINEMATIC ARTS                            25   
+28TH ST                                             26   
+SCARFF ST                                           26   
+MAY ORMEROD HARRIS HALL QUINN WING & FISHER GALLER  27   
+36TH PL                                             27   
+37TH PL                                             28   
+JOHN MCKAY CENTER                                   28   
+YOGURTLAND                                          3    
+MUDD MEMORIAL RESEARCH BUILDING                     3    
+TROJANDALE                                          3    
+TROJAN TERRACE                                      3    
+TROJAN LIQUOR                                       3    
+VAGABOND MOTEL                                      3    
+THE ROW SOUTH ALLEY                                 3    
+PAD APTS                                            3    
+PACIFIC APARTMENTS                                  3    
+TEMPORARY RESEARCH FACILITY                         3    
+NORRIS MEDICAL LIBRARY                              3    
+ST. MARKS LUTHERAN CHURCH                           3    
+SCHOOL OF CINEMATIC ARTS-BLDG. B                    3    
+SAN PABLO ST & ZONAL AV                             3    
+NORWOOD ST                                          3    
+PARKSIDE APARTMENTSI                                3    
+PARK GROVE AV                                       3    
+THE ROW NORTH ALLEY                                 3    
+MOON APTS                                           3    
+21ST ST                                             3    
+MOBIL                                               3    
+GAMMA PHI BETA                                      3    
+FIGUEROA ST                                         3    
+EXPOSITION BL & FLOWER ST                           3    
+EXPOSITION BL                                       3    
+DOWNEY WY & WATT WY                                 3    
+CUMMINGS ST & ZONAL AV                              3    
+CITY PARK II APTS.                                  3    
+LENICIA B. WEEMES ELEMENTARY SCHOOL                 3    
+CENTURY APARTMENTS ALLEY                            3    
+CARIBBEAN APARTMENTS                                3    
+BELAIRE APARTMENTS                                  3    
+ADAMS BL & ST JAMES PL                              3    
+JEFFERSON BL & GRAND AV                             3    
+ADAMS BL & ORCHARD ST                               3    
+37TH PL & FIGUEROA ST                               3    
+27TH ST & HOOVER ST                                 3    
+27TH ST & MAGNOLIA ST                               3    
+27TH ST & VERMONT AV                                3    
+29TH ST & MENLO AV                                  3    
+30TH ST & MCCLINTOCK AV                             3    
+37TH PL & WATT WY                                   3    
+32ND ST & SHRINE PL                                 3    
+MCCULLOCK TOWNHOMES                                 3    
+MCCULLOCH TOWNHOMES                                 3    
+MARKS TENNIS STADIUM COURT AREA                     3    
+33RD ST & HOPE ST                                   3    
+35TH ST & BUDLONG AV                                3    
+MCKIBBEN ADDITION                                   3    
+HEALTHCARE CENTER1                                  3    
+ORCHARD AV                                          32   
+PORTLAND ST                                         37   
+DEAN BARTLETT CROMWELL FIELD                        37   
+KECK HOSPITAL PARKING BLDG.                         38   
+ZONAL LOT                                           4    
+29TH ST & VERMONT AV                                4    
+JUVENILE HALL                                       4    
+CHILDS WY & PARDEE WY                               4    
+OUTPATIENT SURGERY CENTER                           4    
+MUSIC PRACTICE AND INSTRUCTIONAL CENTER-USC LEASE   4    
+SPUDNUTS                                            4    
+32ND ST & UNIVERSITY AV                             4    
+ADAMS BL & TOBERMAN ST                              4    
+OFF CAMPUS CHECK AREA E                             4    
+JEFFERSON BL & FLOWER ST                            4    
+34TH ST & MCCLINTOCK AV                             4    
+37TH ST & CATALINA ST                               4    
+OFF CAMPUS CHECK AREA C                             4    
+34TH ST & WATT WY                                   4    
+THE MIRAGE                                          4    
+37TH PL & CATALINA ST                               4    
+36TH ST & BUDLONG AV                                4    
+OAK ST                                              4    
+SHRINE PARKING STRUCTURE                            4    
+PALISADES I                                         4    
+DELTA DELTA DELTA                                   4    
+TROJAN HEIGHTS                                      4    
+23RD ST & FLOWER ST                                 4    
+SAN PABLO ST & VALLEY BL                            4    
+24TH ST                                             4    
+28TH ST & PORTLAND ST                               4    
+PANDA EXPRESS                                       4    
+HERITAGE HALL WEIGHT AND DINING FACILITY            4    
+MRS. WILLIS H. BOOTH FERRIS REHEARSAL HALL          4    
+FACILITIES TRAILER TWO                              4    
+UPC PUBLIC SAFETY OFFICE                            40   
+PARKING STRUCTURE C                                 48   
+MERLE NORMAN STADIUM                                5    
+PARKING LOT                                         5    
+SUBWAY                                              5    
+BLOOM WK & WATT WY                                  5    
+ADAMS BL & FLOWER ST                                5    
+HUGHES AIRCRAFT ELECTRICAL ENGINEERING CENTER       5    
+37TH PL & VERMONT AV                                5    
+36TH ST & VERMONT AV                                5    
+ADAMS BL & PORTLAND ST                              5    
+BUDLONG AV                                          5    
+HABITAT SOO ZEE                                     5    
+35TH ST & CATALINA ST                               5    
+28TH ST & HOOVER ST                                 5    
+FRESH AND EASY                                      5    
+SOTO ST & ALCAZAR ST                                5    
+EXPOSITION PARK-ROSE GARDEN                         5    
+SAN PABLO ST & ALCAZAR ST                           5    
+EXPOSITION BL & VERMONT AV                          5    
+ELLENDALE TROJAN APTS.                              5    
+MENLO AV                                            59   
+EXPOSITION BLVD. PARKING STRUCTURE                  59   
+28TH ST & SEVERANCE ST                              6    
+35TH ST & HOPE ST                                   6    
+JEFFERSON BL                                        6    
+23RD ST & PORTLAND ST                               6    
+35TH ST & GRAND AV                                  6    
+36TH PL & CATALINA ST                               6    
+TROJAN PLAZA                                        6    
+VERMONT AV                                          6    
+JEFFERSON BL & WALTON AV                            6    
+MUSIC PRACTICE AND INSTRUCTIONAL                    6    
+SMART & FINAL                                       6    
+HAZARD PARK                                         6    
+SCHOOL OF CINEMATIC ARTS-BLDG. I                    6    
+30TH ST                                             63   
+29TH ST                                             64   
+ELLENDALE PL                                        67   
+MARDETTE APTS.                                      7    
+UNIVERSITY GARDEN APTS                              7    
+MENLO APARTMENTS                                    7    
+ADAMS BL & SEVERANCE ST                             7    
+PARKING LOT V                                       7    
+HOOVER ST                                           7    
+PORTLAND VILLA                                      7    
+ROYAL ST                                            7    
+JEFFERSON BL & ROYAL ST                             7    
+LOS ANGELES MEMORIAL COLISEUM                       7    
+OLYMPIC GARDENS                                     7    
+MONMOUTH AV                                         7    
+PARKING LOT L                                       8    
+EXPOSITION BL & FIGUEROA ST                         8    
+TRANSPORTATION MAINTENANCE YARD                     8    
+29TH ST & HOOVER ST                                 8    
+29TH ST & ELLENDALE PL                              8    
+ADAMS BL & VERMONT AV                               8    
+CATALINA ST                                         8    
+SHRINE PL                                           9    
+PARKING STRUCTURE                                   9    
+PHI GAMMA DELTA                                     9    
+JACK IN THE BOX                                     9    
+25TH ST                                             9    
+27TH ST & FIGUEROA ST                               9    
+MAGNOLIA AV                                         9    
+35TH ST                                             9    
+JEFFERSON BL & ORCHARD AV                           9    
+GALEN ATHLETIC PAVILION                             9    
+ADAMS BL & MENLO AV                                 9    
+34TH ST & FIGUEROA ST                               9    
+LINCOLN PARK                                        9    
+30TH ST & ROYAL ST                                  9    
+SEVERANCE ST                                        9    
+36TH ST                                             9    
+ENTRANCE GATE                                       94   
+THE LORENZO APARTMENTS                              99

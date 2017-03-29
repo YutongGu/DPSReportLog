@@ -20,7 +20,7 @@ function update-logs{
 
     #Start-sleep -seconds 5
     #Establishing PDFConverter function
-    . $projectpath\bin\PDFConverter.ps1
+    . $projectpath\bin\APICall.ps1
 
     if($updateDataset){
         . $projectpath\bin\DPSTextParser2.ps1
@@ -88,6 +88,7 @@ function update-logs{
         $links.add($website)
     }
     #-----------------PHASE 2: Download from the links------------------#
+    write-verbose "Entering phase 2"
     $count=0
     for ($i=$links.count-1; $i -ge 0; $i--){
         $link=$links[$i]
@@ -120,7 +121,7 @@ function update-logs{
                 $site=Invoke-WebRequest $link 
 
                 #calls convertpdf function with given link and filepath to store data in
-                convertpdf -link $link -path $projectpath -quiet
+                apicall -link $link -path $projectpath -quiet
                 if($updateDataSet){
                     write-verbose "Appending to Dataset"
                     $retval = parsereports2 -option 4 -filepath $projectpath -file $txtname -generateDataset -dataset $datasetname -append -suppress

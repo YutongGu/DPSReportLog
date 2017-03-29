@@ -155,7 +155,7 @@ function write-Reports2{
         [switch]$append
     )
     $changemade = $false
-    [string]$line
+    [string]$line=""
     $index=0
     $size=$array.count
     [string]$stringOutput=""
@@ -176,10 +176,12 @@ function write-Reports2{
 	    {
             [int]$i=$dataset.count-1
             $x = $case."Report #"
-            if (-not ($x -match "\D"))
+            if ($x -match "\w" -and -not ($x -match "\D"))
 		    {	
                 if($dataset."Report #" -notcontains $x){
+					write-verbose "Converting $x"
 			        [int]$newReportNum = [convert]::ToInt32($x)
+					write-verbose "Conversion complete"
 			        [int]$lower = 0
 			        [int]$upper = $dataset.count - 1
 			        $i = ($lower + $upper)/2
@@ -188,7 +190,7 @@ function write-Reports2{
                     
 			        while ($newReportNum -ne $currReportNum -and $upper -ne $lower)
 			        {
-                        write-verbose "$i, $lower, $upper"
+                        write-debug "$i, $lower, $upper"
 				        $currReportNum = $dataset[$i]."Report #"
 				        if ($newReportNum -eq $currReportNum) { break }
                         while ($dataset[$i]."Report #" -match "\D") { $i++ }
@@ -229,7 +231,7 @@ function write-Reports2{
             write-verbose "generated dataset of size $size"
             $stringOutput="Size:"+$size+"`n"
 
-            write-verbose "done inserting "
+            write-verbose "done inserting, now updating dataset"
             foreach ($case in $dataset){
                 foreach($key in $case.keys){
                     if($key -ne "Index"){

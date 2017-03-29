@@ -4,6 +4,7 @@
 #option=2: read all .txt files in a given year
 #option=3: read all .txt files in a given month
 #option=4: read a specific .txt file
+#option=5: read a user given array of .txt files
 function parseReports2{
     [OutputType([System.collections.Arraylist])]
     [CmdletBinding(DefaultParameterSetName='ByUserName')]
@@ -24,11 +25,13 @@ function parseReports2{
          [string] $file,
          [string] $year,
          [string] $month,
+         $txtnames,
          [switch] $generateDataset,
          [string] $dataset,
          [switch] $append,
          [switch] $suppress
     )
+	
     $incompletereports=0
     #Generates the dictionary of .txt files based on which option you picked
     if($option -eq 1){
@@ -63,9 +66,17 @@ function parseReports2{
         $year=$txtinput.substring(4,2)
         $txtlist= dir $filepath\dpsreports\20$year\$month\$txtinput
     }
+    
+    if($option -eq 5){
+        #in the case we've provided a list of names already
+        $textlist=$txtnames
+    }
+    else{
+        #extracting the name of each .txt file from txtlist 
+        $txtlist= $txtlist.name
+    }
 
-    #extracting the name of each .txt file from txtlist 
-    $txtlist= $txtlist.name
+    
 
     #count keeps track of what index we are currently on when adding to our array
     $count=0
@@ -89,6 +100,7 @@ function parseReports2{
     #read about 95% of reports. Successful reads are determined by no empty fields and no junk text in the summaries.
     $state=0
     foreach ($txt in $txtlist){
+        write-verbose "***************************Beginning $txt**********************************"
         $unmatchedreportnums = New-Object System.Collections.Queue
         $state=0
         $summary=""
@@ -109,21 +121,21 @@ function parseReports2{
                     $readnextline = $true
                 }
                 if($line -ne $null){
-                    write-verbose $line 
+                    write-debug $line 
                 }
                 if($line -eq $null){
                     break
                 }
                 $incidentline= $line -replace "Incident: "
                 if($line -eq "University of Southern California"){
-                    write-verbose "Got title... skipping next 3 lines"
+                    write-debug "Got title... skipping next 3 lines"
                     $line = $reader.ReadLine()
                     $line = $reader.ReadLine()
                     $line = $reader.ReadLine()
                     $line = $reader.ReadLine()
                 }
                 if($line -notmatch "\w"){
-                    write-verbose "skipping line"
+                    write-debug "skipping line"
                     continue
                 }
                 if($line -match "Re ported:*$|Occurred:*$|Incident:*$|Summary:*$|^cc:"){
@@ -133,7 +145,7 @@ function parseReports2{
                     $report."File"= $txt
                     $values = $line -split "Location: |Re *port *#:|Reported: "
                     if($line -notmatch "Reported:"){
-                        write-verbose "no reported found"
+                        write-debug "no reported found"
                         $report."Reported" = $values[0]
                         $report."Location" = $values[1]
                         if($values[2] -ne $null -and $values[2] -ne ""){
@@ -142,7 +154,7 @@ function parseReports2{
                         
                     }
                     else{
-                        write-verbose "reported found"
+                        write-debug "reported found"
                         $report."Reported" = $values[1]
                         $report."Location" = $values[2]
                         if($values[3] -ne $null -and $values[3] -ne ""){
@@ -151,25 +163,25 @@ function parseReports2{
                     }
                 }
                 elseif($line -notmatch "\D"){
-                    write-verbose "adding to unmatched report #"
+                    write-debug "adding to unmatched report #"
                     [void]$unmatchedreportnums.Enqueue($line)
                 }
                 elseif ($line -match "Re *port *#:"){
-                    write-verbose "report # found"
-                    write-verbose "adding to unmatched report #"
+                    write-debug "report # found"
+                    write-debug "adding to unmatched report #"
                     [void]$unmatchedreportnums.Enqueue($line -replace "Re *port *#: *")
                 }
                 elseif($line -match "Disposition:"){
                     $values = $line -split "Disposition:|Occurred: "
                     if($line -notmatch "Occurred:"){
-                        write-verbose "no occurred found"
+                        write-debug "no occurred found"
                         $report."Occurred"= $values[0]
                         if($values[1] -ne $null -and $values[1] -ne ""){
                            $report."Disposition"=$values[1].trim()
                         }
                     }
                     else{
-                        write-verbose "occurred found"
+                        write-debug "occurred found"
                         $report."Occurred"= $values[1]
                         if($values[2] -ne $null -and $values[2] -ne ""){
                            $report."Disposition"=$values[2].trim()
@@ -177,35 +189,35 @@ function parseReports2{
                     }
                 }
                 elseif($dispositions -contains $line){
-                    write-verbose "adding to disposition"
+                    write-debug "adding to disposition"
                     $report."Disposition"= $line
                 }
                 elseif($line -cnotmatch "[a-z]"){
-                    write-verbose "adding to location"
+                    write-debug "adding to location"
                     $report."Location" += $line
                 }
                 elseif ($incidentline -cmatch "^[A-Z]{2}"){
-                    write-verbose "adding to Incident"
+                    write-debug "adding to Incident"
                     $report."Incident" = $incidentline
                 }
                 else{
-                    write-verbose "adding to summary"
+                    write-debug "adding to summary"
                     $report."Summary"+=$line -replace "Summary: "
                     while($report."Summary" -notmatch "\.$"){
                         $line = $reader.ReadLine()
                         if($line -match "location:|reported:|disposition:|re *port *#:|re ported:|occurred:#"){
                             $report."summary"+="." 
                             $readnextline=$false
-                            write-verbose "No period was found; exiting loop"
+                            write-debug "No period was found; exiting loop"
                             break
                         }
                         if($line -ne $null){
-                            write-verbose $line
+                            write-debug $line
                         }
                         else{
                             break
                         }
-                        write-verbose "adding to summary while there is no ."
+                        write-debug "adding to summary while there is no ."
                         $report."Summary" += " "+$line
                         
                     }
@@ -230,7 +242,7 @@ function parseReports2{
                     }
                     $report=@{"Report #"="";"Incident"="";"Location"="";"Occurred"="";"Reported"="";"Disposition"="";"Summary"="";"File"=""}
                 }
-                write-verbose "NUmber of incomplete reports: $incompletereports"
+                write-verbose "Number of incomplete reports: $incompletereports"
                 $output = "Number of unmatched report #s: " + [convert]::ToString( $unmatchedreportnums.count)
                 write-verbose $output
             }
@@ -248,11 +260,14 @@ function parseReports2{
             }
             $reader.Close()
         }
+        write-verbose "***************************Completed $txt**********************************"
        
     }
     
     cleanup([ref] $array)
+	write-verbose "Cleaning up array"
     sortReports([ref]$array)
+	write-verbose "Sorting array"
     $retval=0
     if($generateDataset){
         if($filepath -like "*bin*"){
@@ -268,18 +283,20 @@ function parseReports2{
             $dataset+= ".dps"
         }
         if($append){
-            $retval = write-Reports2 -array $array -path "$filepath\data\$dataset" -append
+            $retval = write-Reports2 -array $array -path "$filepath\data\$dataset" -append -verbose
         }
         else{
-            $retval = write-Reports2 -array $array -path "$filepath\data\$dataset" 
+            $retval = write-Reports2 -array $array -path "$filepath\data\$dataset" -verbose 
         }
     }
+	
     if(-not $suppress){
         return $array
     }
     else{
         return $retval
     }
+
 }
 
 
@@ -330,7 +347,7 @@ function cleanup([ref]$reportList){
         }
         
     }
-
+    
 }
 function sortReports ([ref]$arrayref){
     $inputArray= $arrayref.Value

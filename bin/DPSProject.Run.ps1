@@ -728,7 +728,6 @@ function Main {
 	[System.Windows.Forms.ComboBoxStyle]::DropDownList;
 	$combobox.items.add("Incident")
 	$combobox.items.add("Location")
-	$combobox.items.add("Reported")
 	$combobox.items.add("Occurred")
 	$combobox.SelectedIndex = 0
 	#
@@ -1718,14 +1717,16 @@ function Show-MainForm_psf
 				if ($isConnected)
 				{
 					
-					$response[0] = update-logs -projectpath $args[0] -option 1
+					$response[0] = update-logs -projectpath $args[0] -option 1 -verbose
 					
 				}
 				else
 				{
 					$response[0] = -1
 				}
-				$response[1] = update-dataset -projectpath $args[0] -datasetname "MainDataset.dps"
+				
+				$response[1] = update-dataset -projectpath $args[0] -datasetname "MainDataset.dps" -verbose
+				
 				if ($response[1] -eq 1)
 				{
 					$path5 = $args[0] + "\data\MainDataset.dps"
@@ -1736,7 +1737,7 @@ function Show-MainForm_psf
 			}
 			catch
 			{
-				Write-Output $_.Exception.Message | Out-File $args[0]\data\error.txt
+				Write-Output $_.Exception.Message | Out-File C:\Users\YutongGu\Desktop\Powershell\ReportSC\data\error.txt
 				
 			}
 		}`

@@ -27,8 +27,10 @@ Function convertpdf{
     Write-Verbose "File name converted to $txtname"
 
     #Call upon a website to convert the .pdf for us by passing it our link to convert and retreiving the link to the .txt
-    $site= Invoke-WebRequest http://document.online-convert.com/convert-to-txt -SessionVariable sesh 
+    $site= Invoke-WebRequest http://document.online-convert.com/convert-to-txt -SessionVariable sesh
+    write-verbose "getting form" 
     $Form=$site.Forms[1]
+    write-verbose "got form"
     $Form.Fields["external_url"]=$link
     try{
         #posting to the website our filled out form containing the link and retreiving it's response
